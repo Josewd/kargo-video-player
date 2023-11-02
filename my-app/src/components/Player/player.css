@@ -1,0 +1,48 @@
+.Player_wrapper {
+  position: relative;
+  width: 70vw;
+  height: fit-content;
+  overflow: hidden;
+  transition: all 0.5s;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0,0,0, 0.3);
+}
+
+.controls {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(90%);
+  transition: all 0.5s;
+}
+
+.Player_wrapper:hover .controls {
+  transform: translateY(0);
+}
+
+.rowContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.center_wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+@media screen and (max-width: 700px) {
+  .Player_wrapper {
+    width: 95vw;
+  }
+}

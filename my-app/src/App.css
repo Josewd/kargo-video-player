@@ -1,0 +1,31 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(21,212,255);
+  background: linear-gradient(90deg, rgba(21,212,255,1) 0%, rgba(53,137,241,1) 0%, rgba(96,214,230,1) 100%);
+}
+
+.Nav {
+  width: 100%;
+  background-color: rgba(2, 2, 85, 0.924);
+  height: 70px;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Logo {
+  width: 100px;
+  resize: both;
+}
+
+@media only screen and (max-width: 700px) {
+  .Nav {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
