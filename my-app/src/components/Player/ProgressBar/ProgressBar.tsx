@@ -11,11 +11,14 @@ export const ProgressBar = (props: IProgressBar) => {
   const [currentTime, setCurrentTime] = useState(0);
   const { video, isAd } = props;
 
-  if (video) {
-    video.addEventListener('timeupdate', ()=> {
-      setCurrentTime(video.currentTime)
-    })
-  }
+  React.useEffect(() => {
+    if (video) {
+      video.addEventListener('timeupdate', ()=> {
+        setCurrentTime(video.currentTime)
+      })
+    }
+  }, [])
+
   const videoDuration = video?.duration || 100
   const porcentage = currentTime / videoDuration * 100
 
