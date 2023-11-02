@@ -9,15 +9,21 @@ interface IProgressCounterProps {
 
 const ProgressCounter = ({ video }: IProgressCounterProps) => {
   const [currentTime, setCurrentTime] = React.useState(0);
-  if (video) {
-    video.addEventListener('timeupdate', () => {
-      setCurrentTime(video.currentTime);
-    });
-  }
+
   const videoDuration = video?.duration || 0;
   const [ minutes, seconds ] = parseSecondsToTimerMinutesAndSeconds(videoDuration);
   const [ minPlayed, secPlayed ] = parseSecondsToTimerMinutesAndSeconds(currentTime);
 
+  React.useEffect(() => {
+    if (video) {
+      video.addEventListener('timeupdate', ()=> {
+        setCurrentTime(video.currentTime)
+      })
+    }
+
+    return video?.removeEventListener('timeupdate', () => {});
+  }, [video]);
+  
   return (
     <div className="ProgressCounter">
       <span className="Timer">{minPlayed}:{secPlayed}</span>/
