@@ -17,7 +17,7 @@ export const ProgressBar = (props: IProgressBar) => {
         setCurrentTime(video.currentTime)
       })
     }
-  }, [])
+  }, [video])
 
   const videoDuration = video?.duration || 100
   const porcentage = currentTime / videoDuration * 100
