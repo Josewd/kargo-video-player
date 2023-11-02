@@ -17,6 +17,9 @@ export const ProgressBar = (props: IProgressBar) => {
         setCurrentTime(video.currentTime)
       })
     }
+
+    return video?.removeEventListener('timeupdate', () => {});
+    
   }, [video])
 
   const videoDuration = video?.duration || 100
