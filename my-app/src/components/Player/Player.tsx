@@ -15,7 +15,7 @@ interface IPlayerProps {
 }
 
 // Constants
-const ADS_INTERVAL = 3;
+const ADS_INTERVAL = 30;
 const ONE_SECOND = 1000;
 
 export const Player = ({ isAds = false, notifyAdHasEnded, url}: IPlayerProps) => {
