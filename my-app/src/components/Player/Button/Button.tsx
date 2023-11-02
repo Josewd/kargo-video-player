@@ -15,7 +15,7 @@ const ButtonPlay = ({ onClick, isPlaying}: IButtonProps) => {
   return (
     <button onClick={onClick}>
       {isPlaying ?  <PauseIcon height={35} width={35} /> : <PlayIcon height={35} width={35} />}
-  </button>
+    </button>
   );
 }
 

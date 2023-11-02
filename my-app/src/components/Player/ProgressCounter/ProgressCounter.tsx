@@ -4,10 +4,9 @@ import React from "react";
 import './progressCounter.css';
 
 interface IProgressCounterProps {
-  duration?: number;
-  currentTime?: number;
   video: HTMLVideoElement | null
-}
+};
+
 const ProgressCounter = ({ video }: IProgressCounterProps) => {
   const [currentTime, setCurrentTime] = React.useState(0);
   if (video) {
